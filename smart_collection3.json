@@ -1,0 +1,20 @@
+{
+  "query": "mutation collectionCreate($input: CollectionInput!) { collectionCreate(input: $input) { collection { id handle title } userErrors { field message } } }",
+  "variables": {
+    "input": {
+      "title": "Piezas de Colección Exclusivas",
+      "handle": "piezas-de-coleccion-exclusivas",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "piezas-exclusivas"
+          }
+        ]
+      },
+      "sortOrder": "ALPHA_ASC"
+    }
+  }
+}

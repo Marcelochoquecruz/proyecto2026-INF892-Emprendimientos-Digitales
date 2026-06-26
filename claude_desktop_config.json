@@ -1,0 +1,11 @@
+{
+  "mcpServers": [
+    {
+      "name": "shopify",
+      "type": "shopify",
+      "storeUrl": "https://71uenf-pc.myshopify.com",
+      "apiVersion": "2026-04",
+      "accessTokenEnv": "SHOPIFY_ADMIN_API_ACCESS_TOKEN"
+    }
+  ]
+}

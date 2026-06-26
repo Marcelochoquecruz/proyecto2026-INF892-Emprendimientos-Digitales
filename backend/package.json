@@ -1,0 +1,16 @@
+{
+  "name": "shopify-auth-backend",
+  "version": "1.0.0",
+  "description": "Small Express API to obtain Shopify access token and expose it securely",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}

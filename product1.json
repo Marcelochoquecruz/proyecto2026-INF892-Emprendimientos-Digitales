@@ -1,0 +1,13 @@
+{
+  "query": "mutation productCreate($input: ProductInput!) { productCreate(input: $input) { product { id handle title } userErrors { field message } } }",
+  "variables": {
+    "input": {
+      "title": "Cuadro Mineralógico \"Cerro Rico\" - Óleo y Pigmentos Reales",
+      "bodyHtml": "Una obra de arte única pintada utilizando pigmentos auténticos obtenidos de la molienda de minerales extraídos de Potosí. Textura orgánica y colores minerales puros.",
+      "variants": [
+        { "price": "450.00" }
+      ],
+      "tags": ["cuadros-pigmentos"]
+    }
+  }
+}

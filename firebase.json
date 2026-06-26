@@ -1,0 +1,9 @@
+{
+  "projectId": "museo-61be0",
+  "firestore": {
+    "database": "(default)",
+    "location": "nam5",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}

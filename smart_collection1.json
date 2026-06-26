@@ -1,0 +1,20 @@
+{
+  "query": "mutation collectionCreate($input: CollectionInput!) { collectionCreate(input: $input) { collection { id handle title } userErrors { field message } } }",
+  "variables": {
+    "input": {
+      "title": "Cuadros con Pigmentos Minerales",
+      "handle": "cuadros-con-pigmentos-minerales",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "cuadros-pigmentos"
+          }
+        ]
+      },
+      "sortOrder": "BEST_SELLING"
+    }
+  }
+}

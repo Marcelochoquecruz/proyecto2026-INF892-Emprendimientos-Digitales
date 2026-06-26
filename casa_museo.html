@@ -1,0 +1,397 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Didact+Gothic&family=EB+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0a0a0a;
+  --black-soft:#111111;
+  --charcoal:#1c1c1c;
+  --gold:#c9a84c;
+  --gold-bright:#e2c06a;
+  --gold-pale:#f5edd6;
+  --tiffany:#81d8d0;
+  --tiffany-deep:#0097a3;
+  --cartier:#c41230;
+  --white:#ffffff;
+  --off-white:#fafaf8;
+  --silver:#e8e6e1;
+  --silver-dark:#b0aca4;
+  --text-dim:rgba(255,255,255,0.55);
+  --text-faint:rgba(255,255,255,0.3);
+}
+body{font-family:'Didact Gothic',sans-serif;background:var(--black);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* HEADER */
+.hdr{background:var(--black);border-bottom:1px solid rgba(201,168,76,0.2);padding:0}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 2rem}
+.brand{display:flex;flex-direction:column;gap:2px}
+.brand-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;letter-spacing:4px;text-transform:uppercase;color:var(--white);line-height:1}
+.brand-sub{font-family:'Didact Gothic',sans-serif;font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);line-height:1}
+.nav{display:flex;gap:2rem;align-items:center}
+.nav a{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color .2s;cursor:pointer;font-family:'Didact Gothic',sans-serif}
+.nav a:hover{color:var(--gold)}
+.hdr-actions{display:flex;align-items:center;gap:1rem}
+.cart-pill{background:transparent;border:1px solid rgba(201,168,76,0.5);color:var(--gold);padding:7px 20px;font-size:9px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;font-family:'Didact Gothic',sans-serif;transition:all .25s}
+.cart-pill:hover{background:var(--gold);color:var(--black)}
+.gold-bar{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.4}
+
+/* HERO */
+.hero{background:var(--black-soft);padding:5rem 2rem 4rem;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-ornament{font-size:10px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;display:flex;align-items:center;justify-content:center;gap:1rem}
+.hero-ornament::before,.hero-ornament::after{content:'';display:inline-block;width:40px;height:1px;background:var(--gold);opacity:0.5}
+.hero-title{font-family:'Playfair Display',serif;font-size:56px;font-weight:400;line-height:1.05;margin-bottom:1.2rem;letter-spacing:1px}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:13px;letter-spacing:1px;color:var(--text-dim);max-width:400px;margin:0 auto 2.5rem;line-height:1.8;font-family:'EB Garamond',serif;font-weight:300;font-size:16px}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--black);border:none;padding:13px 36px;font-size:10px;letter-spacing:4px;text-transform:uppercase;cursor:pointer;font-family:'Didact Gothic',sans-serif;font-weight:400;transition:background .2s}
+.btn-primary:hover{background:var(--gold-bright)}
+.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.3);padding:13px 36px;font-size:10px;letter-spacing:4px;text-transform:uppercase;cursor:pointer;font-family:'Didact Gothic',sans-serif;transition:all .2s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* MARQUEE */
+.marquee{background:var(--gold);padding:10px 0;overflow:hidden;position:relative}
+.marquee-inner{display:flex;gap:3rem;white-space:nowrap;animation:scroll 18s linear infinite}
+.marquee-inner span{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--black);font-family:'Didact Gothic',sans-serif}
+.marquee-inner .dot{width:3px;height:3px;background:rgba(0,0,0,0.3);border-radius:50%;flex-shrink:0;align-self:center}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* TRUST */
+.trust{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)}
+.trust-item{padding:2rem 1.5rem;text-align:center;border-right:1px solid rgba(255,255,255,0.06)}
+.trust-item:last-child{border-right:none}
+.trust-icon{font-size:22px;margin-bottom:8px;opacity:0.9}
+.trust-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.trust-text{font-size:12px;color:var(--text-dim);line-height:1.5}
+
+/* SECTION */
+.section{padding:4rem 2rem}
+.sec-head{text-align:center;margin-bottom:3rem}
+.sec-eyebrow{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.sec-title{font-family:'Playfair Display',serif;font-size:36px;font-weight:400;letter-spacing:1px;line-height:1.1}
+.sec-title em{font-style:italic;color:var(--gold)}
+.sec-rule{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px}
+.sec-rule::before,.sec-rule::after{content:'';display:inline-block;width:30px;height:1px;background:var(--gold);opacity:0.4}
+.sec-rule span{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:0.6}
+
+/* PRODUCTS */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;max-width:720px;margin:0 auto;border:1px solid rgba(255,255,255,0.06)}
+.product-card{background:var(--charcoal);border:1px solid rgba(255,255,255,0.04);cursor:pointer;transition:background .25s;position:relative;overflow:hidden}
+.product-card:hover{background:#222}
+.product-card:hover .p-overlay{opacity:1}
+.p-badge{position:absolute;top:0;left:0;background:var(--gold);color:var(--black);font-size:8px;letter-spacing:3px;text-transform:uppercase;padding:4px 10px;font-family:'Didact Gothic',sans-serif;z-index:2}
+.p-badge.rare{background:var(--cartier)}
+.p-badge.rare{color:#fff}
+.p-img{height:170px;display:flex;align-items:center;justify-content:center;background:var(--black-soft);position:relative;border-bottom:1px solid rgba(255,255,255,0.04)}
+.p-emoji{font-size:54px;line-height:1;filter:drop-shadow(0 4px 16px rgba(201,168,76,0.2))}
+.p-overlay{position:absolute;inset:0;background:rgba(201,168,76,0.05);opacity:0;transition:opacity .25s;display:flex;align-items:center;justify-content:center}
+.p-body{padding:1.2rem 1rem}
+.p-origin{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.p-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--white);margin-bottom:5px;line-height:1.2}
+.p-desc{font-size:11px;color:var(--text-dim);margin-bottom:14px;line-height:1.6}
+.p-footer{display:flex;align-items:center;justify-content:space-between}
+.p-price{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold)}
+.p-price small{font-size:10px;font-family:'Didact Gothic',sans-serif;color:rgba(201,168,76,0.5)}
+.p-add{background:transparent;border:1px solid rgba(201,168,76,0.3);color:var(--gold);width:32px;height:32px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;font-family:serif}
+.p-add:hover{background:var(--gold);color:var(--black)}
+
+/* CATEGORIES */
+.cat-section{background:var(--black-soft);padding:4rem 2rem;border-top:1px solid rgba(255,255,255,0.06)}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;max-width:700px;margin:0 auto;background:rgba(255,255,255,0.04)}
+.cat-item{background:var(--black-soft);padding:2rem 1rem;text-align:center;cursor:pointer;transition:background .2s;position:relative}
+.cat-item:hover{background:rgba(201,168,76,0.06)}
+.cat-item:hover .cat-icon{transform:scale(1.1)}
+.cat-icon{font-size:30px;margin-bottom:10px;display:block;transition:transform .2s}
+.cat-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:400;color:var(--white);margin-bottom:3px}
+.cat-count{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:0.7}
+
+/* FEATURED */
+.featured{background:var(--black);padding:4rem 2rem;border-top:1px solid rgba(255,255,255,0.06)}
+.feat-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:700px;margin:0 auto;align-items:center}
+.feat-artwork{aspect-ratio:1;background:var(--charcoal);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border:1px solid rgba(201,168,76,0.15)}
+.feat-frame{border:1px solid rgba(201,168,76,0.3);position:absolute;inset:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.feat-emoji{font-size:72px;filter:drop-shadow(0 0 24px rgba(201,168,76,0.3))}
+.feat-mineral{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);opacity:0.7}
+.feat-info{}
+.feat-tag{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(--tiffany);margin-bottom:10px}
+.feat-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;line-height:1.2;margin-bottom:14px}
+.feat-body{font-family:'EB Garamond',serif;font-size:15px;color:var(--text-dim);line-height:1.8;margin-bottom:1.5rem;font-weight:300}
+.feat-price{display:flex;align-items:baseline;gap:8px;margin-bottom:1.5rem}
+.feat-price-val{font-family:'Playfair Display',serif;font-size:26px;color:var(--gold)}
+.feat-price-note{font-size:10px;letter-spacing:2px;color:rgba(201,168,76,0.5);text-transform:uppercase}
+.feat-btn{background:var(--gold);color:var(--black);border:none;padding:12px 28px;font-size:9px;letter-spacing:4px;text-transform:uppercase;font-family:'Didact Gothic',sans-serif;cursor:pointer;transition:background .2s}
+.feat-btn:hover{background:var(--gold-bright)}
+
+/* TIFFANY BAND */
+.tiffany-band{background:var(--tiffany);padding:2rem;text-align:center}
+.tiffany-band p{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:var(--black);opacity:0.85}
+.tiffany-band small{display:block;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--black);opacity:0.5;margin-top:4px;font-family:'Didact Gothic',sans-serif}
+
+/* FOOTER */
+.footer{background:#050505;padding:3rem 2rem;text-align:center;border-top:1px solid rgba(201,168,76,0.1)}
+.footer-logo{font-family:'Playfair Display',serif;font-size:16px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:6px}
+.footer-rule{width:40px;height:1px;background:var(--gold);margin:12px auto;opacity:0.3}
+.footer-info{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:1px}
+
+/* CART */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.open{opacity:1;pointer-events:all}
+.cart-panel{position:fixed;top:0;right:-380px;width:360px;height:100vh;background:var(--charcoal);z-index:201;transition:right .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;border-left:1px solid rgba(201,168,76,0.15)}
+.cart-panel.open{right:0}
+.cart-hd{background:var(--black);padding:1.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(201,168,76,0.15)}
+.cart-hd h3{font-family:'Playfair Display',serif;font-weight:400;font-size:20px;letter-spacing:1px}
+.cart-close{background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-dim);width:32px;height:32px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.cart-close:hover{border-color:var(--gold);color:var(--gold)}
+.cart-body{flex:1;overflow-y:auto;padding:1.5rem}
+.cart-empty{text-align:center;padding:3rem 1rem;color:var(--text-dim)}
+.cart-empty-icon{font-size:36px;display:block;margin-bottom:10px;opacity:0.4}
+.cart-empty p{font-family:'EB Garamond',serif;font-style:italic;font-size:15px}
+.cart-item{display:flex;gap:12px;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(255,255,255,0.05);align-items:center}
+.ci-icon{width:50px;height:50px;background:var(--black);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;border:1px solid rgba(201,168,76,0.1)}
+.ci-info{flex:1;min-width:0}
+.ci-name{font-family:'Playfair Display',serif;font-size:14px;color:var(--white)}
+.ci-price{font-size:11px;color:var(--gold);letter-spacing:1px;margin-top:2px}
+.ci-remove{background:none;border:none;color:var(--text-faint);cursor:pointer;font-size:16px;flex-shrink:0;padding:4px;transition:color .2s}
+.ci-remove:hover{color:var(--cartier)}
+.cart-ft{padding:1.5rem;border-top:1px solid rgba(255,255,255,0.06);background:var(--black)}
+.cart-total-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.2rem}
+.cart-total-lbl{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--text-dim)}
+.cart-total-val{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold)}
+.checkout-btn{width:100%;background:var(--gold);color:var(--black);border:none;padding:14px;font-size:9px;letter-spacing:4px;text-transform:uppercase;font-family:'Didact Gothic',sans-serif;cursor:pointer;transition:background .2s}
+.checkout-btn:hover{background:var(--gold-bright)}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(10px);background:var(--charcoal);color:var(--white);padding:12px 24px;font-size:10px;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(201,168,76,0.3);border-left:2px solid var(--gold);opacity:0;transition:all .3s;pointer-events:none;z-index:300;white-space:nowrap;font-family:'Didact Gothic',sans-serif}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+
+<h2 class="sr-only">Casa Museo Potosí Mineral — Boutique de artesanías y cuadros elaborados con minerales bolivianos</h2>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hdr-top">
+    <div class="brand">
+      <span class="brand-name">Casa Museo</span>
+      <span class="brand-sub">Potosí Mineral · Est. Potosí, Bolivia</span>
+    </div>
+    <nav class="nav">
+      <a onclick="scrollTo(0,0)">Maison</a>
+      <a onclick="document.getElementById('coleccion').scrollIntoView({behavior:'smooth'})">Colección</a>
+      <a onclick="document.getElementById('cuadros').scrollIntoView({behavior:'smooth'})">Cuadros</a>
+      <a onclick="document.getElementById('nosotros').scrollIntoView({behavior:'smooth'})">Nosotros</a>
+    </nav>
+    <div class="hdr-actions">
+      <button class="cart-pill" onclick="openCart()">Carrito &nbsp;<span id="cart-count">0</span></button>
+    </div>
+  </div>
+  <div class="gold-bar"></div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-inner">
+    <span>Rodocrosita</span><div class="dot"></div>
+    <span>Azurita</span><div class="dot"></div>
+    <span>Pirita Dorada</span><div class="dot"></div>
+    <span>Bolivianita</span><div class="dot"></div>
+    <span>Wulfenita</span><div class="dot"></div>
+    <span>Malaquita</span><div class="dot"></div>
+    <span>Cuarzo Rosa</span><div class="dot"></div>
+    <span>Plata Nativa</span><div class="dot"></div>
+    <span>Rodocrosita</span><div class="dot"></div>
+    <span>Azurita</span><div class="dot"></div>
+    <span>Pirita Dorada</span><div class="dot"></div>
+    <span>Bolivianita</span><div class="dot"></div>
+    <span>Wulfenita</span><div class="dot"></div>
+    <span>Malaquita</span><div class="dot"></div>
+    <span>Cuarzo Rosa</span><div class="dot"></div>
+    <span>Plata Nativa</span><div class="dot"></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ornament">Potosí, Bolivia · Cerro Rico</div>
+  <h1 class="hero-title">Minerales que se<br>convierten en <em>arte</em></h1>
+  <p class="hero-sub">Artesanías únicas y cuadros elaborados con minerales auténticos de la región potosina — cada pieza, una historia tallada en el tiempo.</p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="document.getElementById('coleccion').scrollIntoView({behavior:'smooth'})">Explorar colección</button>
+    <button class="btn-outline" onclick="document.getElementById('cuadros').scrollIntoView({behavior:'smooth'})">Ver cuadros</button>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div id="nosotros" class="trust">
+  <div class="trust-item">
+    <div class="trust-icon">⛏️</div>
+    <div class="trust-label">Origen certificado</div>
+    <div class="trust-text">Minerales extraídos de minas bolivianas con certificado de autenticidad</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🎨</div>
+    <div class="trust-label">Arte artesanal</div>
+    <div class="trust-text">Elaborado a mano por maestros artesanos potosinos</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">📦</div>
+    <div class="trust-label">Empaque de lujo</div>
+    <div class="trust-text">Presentación exclusiva con estuche y documentación de pieza</div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="coleccion" class="section" style="background:var(--black-soft)">
+  <div class="sec-head">
+    <div class="sec-eyebrow">Colección 2025</div>
+    <h2 class="sec-title">Artesanías con <em>minerales</em></h2>
+    <div class="sec-rule"><span>✦</span></div>
+  </div>
+  <div class="product-grid" id="product-grid"></div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="cat-section">
+  <div class="sec-head">
+    <div class="sec-eyebrow">Explorar por categoría</div>
+    <h2 class="sec-title">Nuestra <em>colección</em></h2>
+    <div class="sec-rule"><span>✦</span></div>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-item"><span class="cat-icon">💎</span><div class="cat-name">Minerales crudos</div><div class="cat-count">24 piezas</div></div>
+    <div class="cat-item"><span class="cat-icon">🖼️</span><div class="cat-name">Cuadros minerales</div><div class="cat-count">18 piezas</div></div>
+    <div class="cat-item"><span class="cat-icon">📿</span><div class="cat-name">Joyería artesanal</div><div class="cat-count">31 piezas</div></div>
+    <div class="cat-item"><span class="cat-icon">🏺</span><div class="cat-name">Esculturas</div><div class="cat-count">12 piezas</div></div>
+    <div class="cat-item"><span class="cat-icon">🔮</span><div class="cat-name">Esferas y geodas</div><div class="cat-count">9 piezas</div></div>
+    <div class="cat-item"><span class="cat-icon">🎁</span><div class="cat-name">Edición especial</div><div class="cat-count">6 piezas</div></div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section id="cuadros" class="featured">
+  <div class="sec-head">
+    <div class="sec-eyebrow">Obra destacada</div>
+    <h2 class="sec-title">Cuadros de <em>colección</em></h2>
+    <div class="sec-rule"><span>✦</span></div>
+  </div>
+  <div class="feat-inner">
+    <div class="feat-artwork">
+      <div class="feat-frame">
+        <span class="feat-emoji">🌋</span>
+        <span class="feat-mineral">Rodocrosita · Azurita · Pirita</span>
+      </div>
+    </div>
+    <div class="feat-info">
+      <div class="feat-tag">Edición limitada · Pieza 1 de 3</div>
+      <h3 class="feat-title">El Cerro en Flor</h3>
+      <p class="feat-body">Cuadro elaborado con rodocrosita natural, azurita y pirita de la mina Unificada. Marco en cedro boliviano. Dimensiones 40 × 50 cm. Cada pieza incluye certificado firmado por el artesano.</p>
+      <div class="feat-price">
+        <span class="feat-price-val">Bs. 2,400</span>
+        <span class="feat-price-note">Pieza única</span>
+      </div>
+      <button class="feat-btn" onclick="addToCart({id:99,name:'El Cerro en Flor',price:2400,emoji:'🌋'})">Agregar al carrito</button>
+    </div>
+  </div>
+</section>
+
+<!-- TIFFANY BAND -->
+<div class="tiffany-band">
+  <p>"Cada mineral lleva en sí millones de años de historia boliviana"</p>
+  <small>Casa Museo Potosí Mineral · Potosí, Bolivia</small>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">Casa Museo Potosí Mineral</div>
+  <div class="footer-rule"></div>
+  <div class="footer-info">Potosí, Bolivia &nbsp;·&nbsp; artesanía@casamuseopotosi.bo &nbsp;·&nbsp; +591 2 622 0000</div>
+</footer>
+
+<!-- CART OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<div class="cart-panel" id="cart-panel">
+  <div class="cart-hd">
+    <h3>Tu carrito</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-body" id="cart-body">
+    <div class="cart-empty"><span class="cart-empty-icon">✦</span><p>Tu carrito está vacío</p></div>
+  </div>
+  <div class="cart-ft">
+    <div class="cart-total-row">
+      <span class="cart-total-lbl">Total</span>
+      <span class="cart-total-val" id="cart-total">Bs. 0</span>
+    </div>
+    <button class="checkout-btn" onclick="checkout()">Proceder al pago →</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+const products=[
+  {id:1,name:'Rodocrosita Natural',origin:'Mina Santa Fe · Potosí',desc:'Cristales rosados de manganeso. Pieza única de Bolivia.',price:380,emoji:'🌸',badge:'Exclusivo',rare:false},
+  {id:2,name:'Azurita en Matriz',origin:'Cerro Rico · Potosí',desc:'Azul intenso sobre roca base. Formación natural prístina.',price:520,emoji:'💙',badge:null,rare:false},
+  {id:3,name:'Pirita Dórica',origin:'Mina Unificada',desc:'Cubos perfectos de pirita. Estructura cristalina perfecta.',price:280,emoji:'✨',badge:'Popular',rare:false},
+  {id:4,name:'Collar Bolivianita',origin:'Santa Cruz · Bolivia',desc:'Ametrina boliviana única en el mundo. Engarzada a mano.',price:890,emoji:'💜',badge:'Joyería',rare:false},
+  {id:5,name:'Wulfenita en Flor',origin:'Mina San José',desc:'Cristales tabulares naranjas de excepcional rareza.',price:1200,emoji:'🧡',badge:'Raro',rare:true},
+  {id:6,name:'Esfera de Cuarzo',origin:'Potosí, Bolivia',desc:'Esfera pulida de cuarzo rosa. 8 cm de diámetro perfecto.',price:460,emoji:'🔮',badge:null,rare:false},
+];
+
+let cart=[];
+
+function renderProducts(){
+  const g=document.getElementById('product-grid');
+  g.innerHTML=products.map(p=>`
+    <div class="product-card">
+      ${p.badge?`<div class="p-badge${p.rare?' rare':''}">${p.badge}</div>`:''}
+      <div class="p-img">
+        <span class="p-emoji">${p.emoji}</span>
+        <div class="p-overlay"></div>
+      </div>
+      <div class="p-body">
+        <div class="p-origin">${p.origin}</div>
+        <div class="p-name">${p.name}</div>
+        <div class="p-desc">${p.desc}</div>
+        <div class="p-footer">
+          <div class="p-price">Bs. ${p.price} <small>/ pieza</small></div>
+          <button class="p-add" onclick="addToCart({id:${p.id},name:'${p.name}',price:${p.price},emoji:'${p.emoji}'})">+</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function addToCart(item){
+  cart.push(item);
+  updateCart();
+  showToast('✦  '+item.name+' — agregado');
+}
+function removeFromCart(i){cart.splice(i,1);updateCart()}
+
+function updateCart(){
+  document.getElementById('cart-count').textContent=cart.length;
+  const total=cart.reduce((s,i)=>s+i.price,0);
+  document.getElementById('cart-total').textContent='Bs. '+total.toLocaleString();
+  const b=document.getElementById('cart-body');
+  if(!cart.length){b.innerHTML='<div class="cart-empty"><span class="cart-empty-icon">✦</span><p>Tu carrito está vacío</p></div>';return}
+  b.innerHTML=cart.map((it,idx)=>`
+    <div class="cart-item">
+      <div class="ci-icon">${it.emoji}</div>
+      <div class="ci-info">
+        <div class="ci-name">${it.name}</div>
+        <div class="ci-price">Bs. ${it.price}</div>
+      </div>
+      <button class="ci-remove" onclick="removeFromCart(${idx})">✕</button>
+    </div>
+  `).join('');
+}
+
+function openCart(){document.getElementById('overlay').classList.add('open');document.getElementById('cart-panel').classList.add('open')}
+function closeCart(){document.getElementById('overlay').classList.remove('open');document.getElementById('cart-panel').classList.remove('open')}
+function checkout(){if(!cart.length){showToast('Tu carrito está vacío');return}cart=[];updateCart();closeCart();showToast('✦  Pedido enviado — te contactaremos pronto')}
+
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
+
+renderProducts();
+</script>
