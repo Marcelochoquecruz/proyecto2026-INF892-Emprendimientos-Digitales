@@ -28,11 +28,15 @@ export interface ShopifyProductListResponse {
   products: ShopifyProduct[];
 }
 
+export const SHOPIFY_PROXY_API_BASE = import.meta.env.PROD
+  ? "https://casa-museo-backend.onrender.com/api"
+  : "/api";
+
 /**
  * Fetch products from the secure local Express proxy server.
  */
 export async function getShopifyProducts(): Promise<ShopifyProduct[]> {
-  const response = await fetch("/api/products");
+  const response = await fetch(`${SHOPIFY_PROXY_API_BASE}/products`);
 
   if (!response.ok) {
     const errorText = await response.text();
@@ -42,4 +46,3 @@ export async function getShopifyProducts(): Promise<ShopifyProduct[]> {
   const data = (await response.json()) as ShopifyProductListResponse;
   return data.products;
 }
-

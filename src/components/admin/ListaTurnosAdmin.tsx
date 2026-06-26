@@ -272,7 +272,7 @@ export const ListaTurnosAdmin: React.FC = () => {
                     Efectos glass al hover: escala, rotación y glow 
                   */}
                   <button
-                    onClick={() => eliminarTurno(turno.id!)}
+                    onClick={() => handleDelete(turno.id!)}
                     className="inline-flex items-center justify-center p-1 rounded-full transition-all duration-300 hover:scale-110 hover:rotate-3 hover:shadow-[0_0_20px_rgba(244,63,94,0.5)]"
                     title="Eliminar"
                   >
@@ -284,6 +284,38 @@ export const ListaTurnosAdmin: React.FC = () => {
           })
         )}
       </div>
+
+      {modalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+          <div
+            className="w-full max-w-sm rounded-2xl p-5 text-center shadow-xl"
+            style={{
+              background: glassBg,
+              border: glassBorder,
+              color: valueColor,
+            }}
+          >
+            <p className="mb-5 text-sm font-semibold">{modalMessage}</p>
+            <div className="flex justify-center gap-3">
+              <button
+                type="button"
+                onClick={() => setModalOpen(false)}
+                className="rounded-xl px-4 py-2 text-xs font-bold uppercase tracking-wider"
+                style={{ border: glassBorder, color: descColor }}
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                onClick={confirmDelete}
+                className="rounded-xl bg-rose-600 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white"
+              >
+                Eliminar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <style>{`
         .custom-scrollbar::-webkit-scrollbar {

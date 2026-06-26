@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { ImageOff, Sparkles, Gem, ArrowRight, Check } from 'lucide-react';
-import { getShopifyProducts, type ShopifyProduct } from '../services/shopifyClient';
+import { SHOPIFY_PROXY_API_BASE, getShopifyProducts } from '../services/shopifyClient';
 
 // Fallback images from current project assets
 import pro1 from '../assets/logo.png'; // Fallback base
@@ -103,7 +103,7 @@ export const ShopifyCatalog = () => {
 
     try {
       setNewsletterStatus('loading');
-      const response = await fetch('/api/subscribe', {
+      const response = await fetch(`${SHOPIFY_PROXY_API_BASE}/subscribe`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

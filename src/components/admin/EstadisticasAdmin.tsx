@@ -23,7 +23,6 @@ ChartJS.register(
   Legend,
   ArcElement
 );
-import Chart from 'chart.js/auto';
 
 interface Muestra {
   id: string;
