@@ -24,6 +24,7 @@ export const ListaGaleriaAdmin: React.FC<ListaGaleriaAdminProps> = ({ searchTerm
   const isDark = theme === 'dark';
 
   const [piezas, setPiezas] = useState<PiezaExhibicion[]>([]);
+  const [imagenesFallidas, setImagenesFallidas] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     try {
@@ -69,6 +70,10 @@ export const ListaGaleriaAdmin: React.FC<ListaGaleriaAdminProps> = ({ searchTerm
       (pieza.tipo && pieza.tipo.toLowerCase().includes(term))
     );
   });
+
+  const marcarImagenFallida = (id: string) => {
+    setImagenesFallidas(prev => ({ ...prev, [id]: true }));
+  };
 
   return (
     <div className={`relative overflow-hidden rounded-2xl border-2 shadow-lg transition-all duration-500 ${
@@ -141,15 +146,33 @@ export const ListaGaleriaAdmin: React.FC<ListaGaleriaAdminProps> = ({ searchTerm
               >
                 {/* Imagen */}
                 <div className="shrink-0">
-                  <img
-                    src={pieza.imagenUrl}
-                    alt={pieza.nombreComun}
-                    className={`w-20 h-20 rounded-lg object-cover border-2 transition-all duration-300 ${
-                      isDark
-                        ? 'bg-[#0a0a14] border-[#4f46e5]/40 group-hover:border-[#818cf8]/60'
-                        : 'bg-gray-100 border-gray-600 group-hover:border-gray-900'
-                    }`}
-                  />
+                  {pieza.imagenUrl?.trim() && !imagenesFallidas[pieza.id] ? (
+                    <img
+                      src={pieza.imagenUrl}
+                      alt={pieza.nombreComun}
+                      onError={() => marcarImagenFallida(pieza.id)}
+                      className={`w-20 h-20 rounded-lg object-cover border-2 transition-all duration-300 ${
+                        isDark
+                          ? 'bg-[#0a0a14] border-[#4f46e5]/40 group-hover:border-[#818cf8]/60'
+                          : 'bg-gray-100 border-gray-600 group-hover:border-gray-900'
+                      }`}
+                    />
+                  ) : (
+                    <div
+                      className={`flex h-20 w-20 flex-col items-center justify-center rounded-lg border-2 text-center backdrop-blur-xl transition-all duration-300 ${
+                        isDark
+                          ? 'border-[#818cf8]/50 bg-gradient-to-br from-[#4f46e5]/25 via-[#1e1e35]/80 to-[#0a0a14]/90 text-[#e0e7ff] shadow-[0_0_20px_rgba(129,140,248,0.18)] group-hover:border-[#a5b4fc]/70'
+                          : 'border-indigo-300 bg-white/75 text-indigo-900 shadow-[0_8px_24px_rgba(99,102,241,0.12)] group-hover:border-indigo-500'
+                      }`}
+                    >
+                      <span className="text-2xl leading-none" aria-hidden="true">
+                        {pieza.tipo === 'mineral' ? '💎' : '🦴'}
+                      </span>
+                      <span className="mt-1 text-[10px] font-bold uppercase tracking-wider">
+                        Sin foto
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Contenido */}
