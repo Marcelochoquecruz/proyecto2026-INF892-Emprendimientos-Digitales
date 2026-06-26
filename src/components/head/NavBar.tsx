@@ -32,8 +32,8 @@ const NavBar = () => {
   const menuItems = [
     { text: 'Inicio', link: '/', icon: FaHome },
     { text: 'Reserva de Visitas', link: '/reservas', icon: FaCalendarAlt },
-    { text: 'Catálogo de Productos Artesanales', link: '/catalogo', icon: FaPalette },
-    { text: 'Colección Mineral & Fósiles', link: '/coleccion', icon: FaGem },
+    { text: 'Catálogo de Productos Artesanales', link: '/shop', icon: FaPalette },
+    { text: 'Colección Mineral & Fósiles', link: '/coleccion-publica', icon: FaGem },
     { text: 'Rutas y Expediciones', link: '/rutas', icon: FaMapMarkedAlt },
     { text: 'Nuestra Historia', link: '/historia', icon: FaLandmark },
   ];

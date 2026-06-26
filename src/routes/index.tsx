@@ -10,6 +10,7 @@ import Inscripciones from '../pages/Inscripciones';
 // Public Rutas and Expediciones page
 import RutasPublic from '../components/public/RutasPublic';
 import Historia from '../components/public/Historia';
+import ColeccionPublica from '../components/public/ColeccionPublica';
 
 // Páginas de Administración
 import Login from '../pages/admin/Login';
@@ -23,6 +24,7 @@ const AppRoutes = () => {
       {/* Rutas Públicas */}
       <Route path="/" element={<Principal />} />
       <Route path="/shop" element={<Shop />} />
+      <Route path="/coleccion-publica" element={<ColeccionPublica />} />
       <Route path="/login" element={<Login />} />
       
       {/* Vinculamos el path de tu menú (/reservas) con el formulario real */}

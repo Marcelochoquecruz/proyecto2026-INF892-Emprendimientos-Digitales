@@ -14,7 +14,7 @@ const menuItems = [
     nivel: 'Colección Mineral & Fósiles',
     descripcion: 'Explora muestras científicas de vetas auténticas y piezas artísticas en resina.',
     icon: Gem,
-    href: '/coleccion',
+    href: '/coleccion-publica',
   },
   {
     nivel: 'Rutas y Expediciones',

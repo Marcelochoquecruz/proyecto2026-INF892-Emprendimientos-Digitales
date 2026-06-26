@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useTheme } from './useTheme';
+import slider1 from '../assets/slider1.png';
+import slider2 from '../assets/slider2.png';
+import slider3 from '../assets/slider3.png';
+import slider4 from '../assets/slider4.png';
 
 interface SlideData {
   image: string;
@@ -19,25 +23,25 @@ const Carrousel: React.FC = () => {
 
   const data: SlideData[] = [
     {
-      image: 'src/assets/slider1.png',
+      image: slider1,
       titulo: 'Casa Museo Potosí Mineral',
       descripcion:
         'Un espacio cultural interactivo donde el arte, la historia y la riqueza mineralógica del Cerro Rico de Potosí se unen para ofrecer una experiencia patrimonial única.',
     },
     {
-      image: 'src/assets/slider2.png',
+      image: slider2,
       titulo: 'Cuadros Decorativos y Arte',
       descripcion:
         'Obras artísticas exclusivas inspiradas en la identidad potosina, creadas con minerales naturales y pigmentos que resaltan la geología de la región.',
     },
     {
-      image: 'src/assets/slider3.png',
+      image: slider3,
       titulo: 'Patrimonio de Potosí',
       descripcion:
         'Explora la profunda historia minera que convirtió a nuestra ciudad en un pilar económico global, documentada en maquetas e ilustraciones históricas.',
     },
     {
-      image: 'src/assets/slider4.jpg',
+      image: slider4,
       titulo: 'Exhibición Geológica',
       descripcion:
         'Admira una imponente colección de cristales, muestras de vetas auténticas y piezas mineralógicas cuidadosamente clasificadas en nuestros salones.',
@@ -315,8 +319,8 @@ const Carrousel: React.FC = () => {
 
               {/* Botones de acción (estilo Índigo Cristal) */}
               <div className="flex flex-wrap gap-3">
-                <a
-                  href="http://localhost:5173/coleccion"
+                <Link
+                  to="/coleccion-publica"
                   className="px-5 py-2.5 text-sm rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#818cf8]/50"
                   style={{
                     background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
@@ -326,7 +330,7 @@ const Carrousel: React.FC = () => {
                   }}
                 >
                   Explorar Colección
-                </a>
+                </Link>
 
                 <Link
                   to="/reservas"
